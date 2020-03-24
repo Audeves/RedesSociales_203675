@@ -22,7 +22,7 @@ public class Pruebas {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        EntityManagerFactory managerFactory = Persistence.createEntityManagerFactory("RedesSocialesPU");
+        EntityManagerFactory managerFactory = Persistence.createEntityManagerFactory("RedesSociales_203675PU");
         EntityManager entityManager  = managerFactory.createEntityManager();
 
         entityManager.getTransaction().begin();

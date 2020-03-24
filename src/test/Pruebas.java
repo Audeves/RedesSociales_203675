@@ -44,6 +44,7 @@ public class Pruebas {
         entityManager.persist(redSocial1);
 
         entityManager.getTransaction().commit();
+        
 
     }
 

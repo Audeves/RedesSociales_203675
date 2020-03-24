@@ -27,7 +27,8 @@ import javax.persistence.Temporal;
 public class Usuario extends EntityBase implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    
+    
     public Usuario() {
         this.redes=new HashSet<RedSocialUsuario>();
     }

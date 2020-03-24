@@ -30,7 +30,7 @@ public class Pruebas {
         Usuario user = new Usuario();
         user.setNombre("Luis Audeves");
         user.setEmail("audeves01@gmail.com");
-        user.setFechaNac(new Date());
+        user.setFechaNacimiento(new Date());
         user.setSexo(true);
 
         entityManager.persist(user);

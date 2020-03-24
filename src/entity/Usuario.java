@@ -68,14 +68,14 @@ public class Usuario extends EntityBase implements Serializable {
 
     @Column
     @Temporal(javax.persistence.TemporalType.DATE)
-    private Date fechaNac;
+    private Date fechaNacimiento;
 
-    public Date getFechaNac() {
-        return fechaNac;
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
-    public void setFechaNac(Date fechaNac) {
-        this.fechaNac = fechaNac;
+    public void setFechaNacimiento(Date fechaNac) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
@@ -91,7 +91,7 @@ public class Usuario extends EntityBase implements Serializable {
 
     public int getEdad() {
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate fechaNac = LocalDate.parse(this.fechaNac.toString(), fmt);
+        LocalDate fechaNac = LocalDate.parse(this.fechaNacimiento.toString(), fmt);
         LocalDate ahora = LocalDate.now();
         return Period.between(fechaNac, ahora).getYears();
     }

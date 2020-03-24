@@ -29,7 +29,7 @@ public class Usuario extends EntityBase implements Serializable {
     private static final long serialVersionUID = 1L;
 
     public Usuario() {
-        this.redes=new HashSet<RedUsuario>();
+        this.redes=new HashSet<RedSocialUsuario>();
     }
 
     @Column
@@ -78,13 +78,13 @@ public class Usuario extends EntityBase implements Serializable {
     }
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
-    private Set<RedUsuario> redes = new HashSet<>();
+    private Set<RedSocialUsuario> redes = new HashSet<>();
 
-    public Set<RedUsuario> getRedes() {
+    public Set<RedSocialUsuario> getRedes() {
         return redes;
     }
 
-    public void addRed(RedUsuario red) {
+    public void addRed(RedSocialUsuario red) {
         this.redes.add(red);
     }
 

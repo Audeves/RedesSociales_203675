@@ -22,7 +22,7 @@ import javax.persistence.Temporal;
  * @author Luis
  */
 @Entity
-public class RedUsuario implements Serializable {
+public class RedSocialUsuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
     
@@ -43,10 +43,10 @@ public class RedUsuario implements Serializable {
     @Column
     private String pseudonimo;
 
-    public RedUsuario() {
+    public RedSocialUsuario() {
     }
 
-    public RedUsuario(Usuario usuario, RedSocial redSocial, Date fechaRegistro, String pseudonimo) {
+    public RedSocialUsuario(Usuario usuario, RedSocial redSocial, Date fechaRegistro, String pseudonimo) {
         this.usuario = usuario;
         this.redSocial = redSocial;
         this.fechaRegistro = fechaRegistro;
@@ -104,7 +104,7 @@ public class RedUsuario implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final RedUsuario other = (RedUsuario) obj;
+        final RedSocialUsuario other = (RedSocialUsuario) obj;
         if (!Objects.equals(this.usuario, other.usuario)) {
             return false;
         }

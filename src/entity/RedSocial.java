@@ -30,7 +30,7 @@ public class RedSocial extends EntityBase implements Serializable {
     private String nombre;
 
     public RedSocial() {
-        this.usuarios=new HashSet<RedUsuario>();
+        this.usuarios=new HashSet<RedSocialUsuario>();
     }
 
     public String getNombre() {
@@ -65,15 +65,15 @@ public class RedSocial extends EntityBase implements Serializable {
     }
     
     public void agregarUsuario(Usuario usuario, String pseudonimo){
-        RedUsuario red=new RedUsuario(usuario, this, new Date(), pseudonimo);
+        RedSocialUsuario red=new RedSocialUsuario(usuario, this, new Date(), pseudonimo);
         usuario.addRed(red);
         this.usuarios.add(red);
     }
     
     @OneToMany(mappedBy="redSocial", cascade=CascadeType.ALL)
-    private Set<RedUsuario> usuarios;
+    private Set<RedSocialUsuario> usuarios;
 
-    public RedSocial(String nombre, String website, Date fechaInicio, Set<RedUsuario> usuarios) {
+    public RedSocial(String nombre, String website, Date fechaInicio, Set<RedSocialUsuario> usuarios) {
         this.nombre = nombre;
         this.website = website;
         this.fechaInicio = fechaInicio;
